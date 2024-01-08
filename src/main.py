@@ -1,7 +1,12 @@
+import os
 import requests
+
+from dotenv import load_dotenv
+
 
 def get_weather(api_key, city):
     '''Returns weather data for the given city, or None if the city is not found.'''
+    #api_key = os.getenv("API_KEY")
     base_url = "http://api.openweathermap.org/data/2.5/weather"
     params = {"q": city, "appid": api_key, "units": "metric"}  # Adjust units as needed
     try:
@@ -20,7 +25,10 @@ def get_weather(api_key, city):
     
 def main():
     '''Main function.'''
-    api_key = ""
+
+    load_dotenv()  # Load environment variables from .env file
+    api_key = os.getenv("OPENWEATHERMAP_API_KEY") # Get API key from environment variable
+    
     city = input("Enter the city name: ")
 
     weather_data = get_weather(api_key, city)
