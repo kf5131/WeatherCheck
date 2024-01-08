@@ -4,8 +4,10 @@ Simple CLI weather app. A weather application that fetches real-time weather dat
 
 ## Installation
 
-TODO: Describe the installation process
+'''Bash
+pip install python-dotenv
+'''
 
 ## Usage
 
-TODO: Write usage instructions
+First go to https://openweathermap.org, and retrive a free api-key. Paste into .env file. Then run in commandline.
